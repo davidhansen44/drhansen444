@@ -1,0 +1,32 @@
+CSE 111 Proposal for a Student Chosen Program
+
+1. What is the title of your program? 
+Auto Insurance Pricing Model: Risk-Based Premium Calculator
+
+2. What real-world problem will your program address or help to solve? 
+This program will help demonstrate how insurance premiums can be calculated by analyzing driver behavior and risk factors. The program will create an estimated premium based on user information and give the user an idea of how different factors play into their premium.
+
+3. What will you learn from developing this program?
+-I will learn how to organize a larger program.
+-Apply mathematical formulas to real world problems like insurance pricing.
+-How certain behaviors or factors play a role in your overall insurance premium.
+-Use python specifically for an industry I wish to enter.
+
+4. What Python modules will your program use?
+-Math
+-CSV
+-Pytest
+-Datetime
+
+5. List the names of functions you will need?
+A list of functions I will use are:
+calculate_age_factor, calculate_vehicle_factor, calculate_driving_history_factor, calculate_mileage_factor, calculate_claim_risk_score, calculate_base_premium, calculate_final_premium, get_driver_information,
+
+6. List the names of the test functions you will write.
+test_calculate_age_factor
+test_calculate_vehicle_factor
+test_calculate_driving_history_factor
+test_calculate_mileage_factor
+test_calculate_claim_risk_score
+test_calculate_base_premium\
+test_calculate_final_premium

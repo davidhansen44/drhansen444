@@ -1,0 +1,140 @@
+import statistics
+import csv
+
+print(" " + "=" * 50)
+print("   CLAIMS FREQUENCY & SEVERITY ANALYZER")
+print(" " + "=" * 50)
+
+customers = [
+    {"id": 1, "age_group": "Young", "claims": 2},
+    {"id": 2, "age_group": "Young", "claims": 1},
+    {"id": 3, "age_group": "Young", "claims": 0},
+    {"id": 4, "age_group": "Middle", "claims": 1},
+    {"id": 5, "age_group": "Middle", "claims": 2},
+    {"id": 6, "age_group": "Middle", "claims": 0},
+    {"id": 7, "age_group": "Senior", "claims": 1},
+    {"id": 8, "age_group": "Senior", "claims": 0},
+    {"id": 9, "age_group": "Senior", "claims": 2},
+    {"id": 10, "age_group": "Young", "claims": 1}
+]
+
+claim_amounts = [
+    2500, 4200, 1800, 6500, 3200,
+    5100, 1200, 7800, 2900, 4600,
+    3500, 6100, 2200, 9000
+]
+
+
+total_customers = len(customers)
+
+total_claims = sum(
+    customer["claims"] for customer in customers
+)
+
+claim_frequency = total_claims / total_customers
+
+
+customers_with_claims = sum(
+    1 for customer in customers
+    if customer["claims"] > 0
+)
+
+claimant_percentage = (
+    customers_with_claims / total_customers
+) * 100
+
+
+average_severity = statistics.mean(claim_amounts)
+
+median_severity = statistics.median(claim_amounts)
+
+largest_claim = max(claim_amounts)
+
+smallest_claim = min(claim_amounts)
+
+total_claim_cost = sum(claim_amounts)
+
+
+
+pure_premium = total_claim_cost / total_customers
+
+
+
+age_groups = ["Young", "Middle", "Senior"]
+
+print("\nAGE GROUP ANALYSIS")
+
+
+for age in age_groups:
+
+    group_customers = [
+        customer for customer in customers
+        if customer["age_group"] == age
+    ]
+
+    group_claims = sum(
+        customer["claims"] for customer in group_customers
+    )
+
+    group_frequency = (
+        group_claims / len(group_customers)
+    )
+
+    print(f"{age} Drivers:")
+    print(f"  Customers: {len(group_customers)}")
+    print(f"  Total Claims: {group_claims}")
+    print(f"  Claim Frequency: {group_frequency:.2f}")
+
+
+
+print("\nOVERALL CLAIMS ANALYSIS")
+print("------------------------------------------")
+
+print(f"Total Customers: {total_customers}")
+
+print(f"Total Claims: {total_claims}")
+
+print(f"Claim Frequency: {claim_frequency:.2f}")
+
+print(f"Customers Filing Claims: {claimant_percentage:.2f}%")
+
+print(f"Average Claim Severity: ${average_severity:,.2f}")
+
+print(f"Median Claim Severity: ${median_severity:,.2f}")
+
+print(f"Largest Claim: ${largest_claim:,.2f}")
+
+print(f"Smallest Claim: ${smallest_claim:,.2f}")
+
+print(f"Total Claim Costs: ${total_claim_cost:,.2f}")
+
+print(f"Pure Premium: ${pure_premium:,.2f}")
+
+print("------------------------------------------")
+
+
+with open(
+    "claims_analysis_results.csv",
+    "w",
+    newline=""
+) as file:
+
+    writer = csv.writer(file)
+
+    writer.writerow(["Metric", "Result"])
+
+    writer.writerow(["Total Customers", total_customers])
+    writer.writerow(["Total Claims", total_claims])
+    writer.writerow(["Claim Frequency", claim_frequency])
+    writer.writerow(["Claimant Percentage", claimant_percentage])
+    writer.writerow(["Average Severity", average_severity])
+    writer.writerow(["Median Severity", median_severity])
+    writer.writerow(["Largest Claim", largest_claim])
+    writer.writerow(["Smallest Claim", smallest_claim])
+    writer.writerow(["Total Claim Costs", total_claim_cost])
+    writer.writerow(["Pure Premium", pure_premium])
+
+
+print(" Analysis exported was successful! ")
+
+print("File: claims_analysis_results.csv")

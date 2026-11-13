@@ -1,0 +1,34 @@
+Student Project Report
+
+Do the following:
+
+1. In the table below, list the dates, amount of time spent, and
+description of the work that you did on your project. Follow the example
+that is in the first row of the table below. Include the time you spent
+doing any of the following:
+    a. discussing your project with your teacher, tutor, or fellow students
+    b. researching by reading articles and watching applicable videos
+    c. designing your project by drawing diagrams and other applicable documents
+    d. writing experimental code
+    d. writing code for your project
+    e. writing test functions
+    f. debugging your code
+    g. any other activity that helped you complete your project
+
+
+2026-08-07	0.5	Came up with the idea for my project and decided to make an auto insurance pricing calculator since I already have experience in insurance.
+2026-08-07	0.5	Figured out what information I wanted the program to use, such as age, vehicle type, accidents, tickets, and mileage.
+2026-08-08	1.0	Looked into some basic insurance pricing and risk factors to get an idea of how I could simplify them for my program.
+2026-08-08	1.0	Planned out the different functions I would need and how they would work together.
+2026-08-09	1.0	Started writing the program and created the age and vehicle factor functions.
+2026-08-09	1.0	Added the driving history and mileage functions and tried them with different numbers to make sure they were working.
+2026-08-10	1.0	Worked on the claim risk score. I made a simple system that increases the score based on things like accidents, tickets, age, and mileage.
+2026-08-10	1.0	Created the functions for calculating the base premium and final premium.
+2026-08-10	0.5	Added datetime so the program could figure out a driver's age from their birthday.
+2026-08-11	0.5	Created the CSV file with the different vehicle types and their rating factors.
+2026-08-11	0.5	Updated the program to read the vehicle information from the CSV file.
+2026-08-11	1.0	Added the part of the program that asks the user for their information and sends it to the different functions.
+2026-08-11	1.0	Put everything together and worked on making the final results easier to read.
+2026-08-12	1.0	Wrote the pytest functions and tested the different calculations.
+2026-08-12	1.0	Ran the program several times, found a few problems, and fixed the errors.
+2026-08-12	0.5	Tried different driver information to make sure the premium changed when the risk factors changed.
